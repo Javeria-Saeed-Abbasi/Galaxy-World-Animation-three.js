@@ -15,6 +15,13 @@
 html, body {
   margin: 0;
   height: 100%;
+
+}
+body{
+  background-image: url('./assets/images/bg7.jpg')!important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 #c {
   width: 100%;
@@ -44,6 +51,8 @@ section {
   min-height: 100vh;
   transform-style: preserve-3d;
   position: fixed;
+  /* background-color: #196c85; */
+
 }
 .text{
   position: absolute;
@@ -129,14 +138,14 @@ transform: translate(-50px, -50%);
   transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(220px);
   color: #fff;
   letter-spacing: 0.15em;
-  text-shadow: -1px -1px 1px #efede3, 0px 1px 0 #2e2e2e, 0px 2px 0 #2c2c2c,
+  /* text-shadow: -1px -1px 1px #efede3, 0px 1px 0 #2e2e2e, 0px 2px 0 #2c2c2c,
     0px 3px 0 #2a2a2a, 0px 4px 0 #282828, 0px 5px 0 #262626, 0px 6px 0 #242424,
     0px 7px 0 #222, 0px 8px 0 #202020, 0px 9px 0 #1e1e1e, 0px 10px 0 #1c1c1c,
     0px 11px 0 #1a1a1a, 0px 12px 0 #181818, 0px 13px 0 #161616,
     0px 14px 0 #3e3b3bfa, 0px 15px 0 #c1b7b7,
     -1px 18px 5px rgb(213 155 24 / 90%), 5px 23px 5px rgb(0 0 0 / 30%),
-    8px 27px 8px rgb(0 0 0 / 50%), 8px 28px 35px rgb(0 0 0 / 90%);
-  /* text-shadow: 
+    8px 27px 8px rgb(0 0 0 / 50%), 8px 28px 35px rgb(0 0 0 / 90%); */
+   text-shadow: 
           -1px -1px 1px #efede3, 
           0px 1px 0 #2e2e2e, 
           0px 2px 0 #2c2c2c, 
@@ -156,7 +165,7 @@ transform: translate(-50px, -50%);
           2px 20px 5px rgba(0, 0, 0, 0.9),
           5px 23px 5px rgba(0, 0, 0, 0.3),
           8px 27px 8px rgba(0, 0, 0, 0.5),
-          8px 28px 35px rgba(0, 0, 0, 0.9); */
+          8px 28px 35px rgba(0, 0, 0, 0.9); 
         
 }
 
@@ -291,22 +300,42 @@ box-shadow: 0px 0px 10px 1px #888888;
 }
 
 .galaxy-stars span {
-position: absolute;
-transform-origin: center;
-transform-style: preserve-3d;
-left: 50%;
-top: 100%;
-width: 3px;
-height: 3px; 
-background-color:#fff; 
-border-radius: 50%;
-/* transform: rotateY(calc(var(--i) * calc(360deg / 46))) translateZ(423px); */
-animation: animatefade2 1s linear infinite,rotateStarAnim 1s linear infinite;
-box-shadow: 0px 0px 10px 1px #888888;
-
+  position: absolute;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  left: 50%;
+  top: 100%;
+  width: 6px;
+  height: 6px;
+  background-color: #c7ccd3;
+  border-radius: 50%;
+  /* transform: rotateY(calc(var(--i) * calc(360deg / 46))) translateZ(423px); */
+  animation: animatefade2 1s linear infinite,rotateStarAnim 1s linear infinite;
+  box-shadow: 0px 0px 10px 1px #888888, 0px 0px 11px 3px #1d66d3, 0px 0px 15px 4px #372095;;
+}
+.galaxy-stars span::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  top: 3px;
+  height: 1px;
+  left: -5px;
+  background: linear-gradient(90deg,#fff,transparent);
+  transform: rotateZ(45deg);
+}
+.galaxy-stars span::after {
+  content: '';
+  position: absolute;
+  width: 17px;
+  top: 1px;
+  height: 1px;
+  left: -4px;
+  background: linear-gradient(90deg,#fff,transparent);
+  transform: rotateZ(322deg);
 }
 .galaxy-stars span:hover {
   cursor: pointer;
+
 }
 @keyframes animatefade2 {
   0%{
