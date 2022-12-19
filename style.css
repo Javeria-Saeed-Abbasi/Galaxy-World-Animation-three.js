@@ -115,6 +115,7 @@ transform: translate(-50px, -50%);
   animation: animateText 10s linear infinite;
   /* background-color: white; */
 
+
 }
 .circle span {
   position: absolute;
@@ -453,12 +454,32 @@ box-shadow: 0px 0px 10px 1px #888888;
   }
 }
 @media only screen and (min-width: 1600px){
-.circle{
+/* .circle{
   left: 70%;
 }
   .circle span {
     transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(339px);
+    
+} */
+.circle {
+  left: 63%;
+  top: 54%;
 }
+.circle span {
+  transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(221px);
+}
+}
+@-moz-document url-prefix() { 
+  @media only screen and (min-width: 1600px){
+  .circle{
+    top: 54%;
+    left: 63%;
+  }
+  .circle span {
+    transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(225px); 
+}
+}
+
 }
 @media only screen and (min-width: 1920px){
   .circle{
@@ -522,6 +543,36 @@ box-shadow: 0px 0px 10px 1px #888888;
         top: 35%;
         left: 30%;
       }
+    
+    }
+    @-moz-document url-prefix() { 
+      @media only screen and (max-width: 414px){
+        .circle {
+          left: 51%;
+          top: 67%;
+      }
+        .circle span {
+          font-size: 2rem;
+          transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(140px);
+        }
+      }
+    }
+    @media only screen and (max-width: 390px){
+      .circle {
+        left: 50%;
+        top: 64%;
+    }
+        /* .circle span {
+          transform: rotateY(calc(var(--i) * calc(360deg / 24))) translateZ(339px);
+      } */
+      .circle span {
+        font-size: 2rem;
+        transform:rotateY(calc(var(--i) * calc(360deg / 25))) translateZ(108px);
+      }
+      .text {
+        top: 35%;
+        left: 25%;
+    }
     }
     @media only screen and (max-width: 360px){
       .circle {

@@ -1,6 +1,42 @@
 let scene;
 let camera;
 let renderer;
+let userAgent = navigator.userAgent;
+let browserName;
+function fnBrowserDetect(){
+                 
+
+  let userAgent = navigator.userAgent;
+  let browserName;
+  if(userAgent.match(/chrome|chromium|crios/i)){
+      browserName = "chrome";
+     
+    }else if(userAgent.match(/firefox|fxios/i)){
+      browserName = "firefox";
+
+  if (window.innerWidth == 1440) {
+    // for 414px;
+    earthmesh.position.x = 0;
+    earthmesh.position.y = -0.5;
+    camera.position.z = 5;
+    console.log("1440px");
+  }
+    }  else if(userAgent.match(/safari/i)){
+      browserName = "safari";
+     
+    }else if(userAgent.match(/opr\//i)){
+      browserName = "opera";
+    } else if(userAgent.match(/edg/i)){
+      browserName = "edge";
+    }else{
+      browserName="No browser detection";
+    }
+  
+  //  document.querySelector("h1").innerText="You are using "+ browserName +" browser";
+   console.log(browserName);
+   console.log(window.innerWidth);
+  
+}
 // let SKY_COLOR = 0x999999;
 // let GROUND_COLOR = 0x242424;
 // let SKY_SIZE = 1000000;
@@ -34,6 +70,8 @@ let renderer;
 //       const sky = new Mesh(skyGeo, skyMat)
 //       scene.add(sky)
 // }
+
+
 function resizeCanvasToDisplaySize(width, height) {
   const canvas = renderer.domElement;
   // look up the size the canvas is being displayed
@@ -90,27 +128,102 @@ function main() {
   const earthmesh = new THREE.Mesh(earthgeometry, eatrhmaterial);
 
   earthmesh.position.x = 0.6;
-  if (window.innerWidth == 414) {
+  if(userAgent.match(userAgent.match(/chrome|chromium|crios/i))){
+    browserName = "chrome";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  earthmesh.position.x = 0.6;
+  earthmesh.position.y = -0.1;
+  camera.position.z = 2;
+  console.log("1600px chrome");
+}
+else if (window.innerWidth == 768) {
+  // for 768px;
+  earthmesh.position.x = 0;
+  earthmesh.position.y = -0.5;
+  camera.position.z = 4;
+  console.log("768px");
+ }
+else if (window.innerWidth == 360) {
+  // for 360px;
+  earthmesh.position.x = 0;
+  earthmesh.position.y = -0.5;
+  camera.position.z = 4;
+  console.log("360px");
+ }
+ else if (window.innerWidth == 390) {
+  // for 390px;
+  earthmesh.position.x = 0;
+  earthmesh.position.y = -0.5;
+  camera.position.z = 4;
+  console.log("390px");
+ }
+ 
+  };
+  if(userAgent.match(userAgent.match(/firefox|fxios/i))){
+    browserName = "firefox";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  earthmesh.position.x = 0.6;
+  earthmesh.position.y = -0.1;
+  camera.position.z = 4;
+  console.log("1600px firefox");
+}
+else if (window.innerWidth == 360) {
+ // for 360px;
+ earthmesh.position.x = 0;
+ earthmesh.position.y = -0.5;
+ camera.position.z = 4;
+ console.log("360px");
+}
+else if (window.innerWidth == 768) {
+ // for 768px;
+ earthmesh.position.x = 0;
+ earthmesh.position.y = -0.5;
+ camera.position.z = 4;
+ console.log("768px");
+}
+
+  };
+  if(userAgent.match(userAgent.match(/safari/i))){
+    browserName = "safari";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  earthmesh.position.x = 0.6;
+  earthmesh.position.y = -0.1;
+  camera.position.z = 4;
+  console.log("1600px safari");
+}};
+   if (window.innerWidth == 414) {
     // for 414px;
     earthmesh.position.x = 0;
     earthmesh.position.y = -0.5;
     camera.position.z = 5;
     console.log("414px");
   }
-  if (window.innerWidth == 360) {
+   if (window.innerWidth == 360) {
     // for 360px;
     earthmesh.position.x = 0;
     earthmesh.position.y = -0.5;
     camera.position.z = 4;
     console.log("360px");
   }
-  if (window.innerWidth == 768) {
+  if (window.innerWidth == 390) {
+    // for 390px;
+    earthmesh.position.x = 0;
+    earthmesh.position.y = -0.5;
+    camera.position.z = 6;
+    console.log("390px");
+   }
+   if (window.innerWidth == 768) {
     // for 768px;
     earthmesh.position.x = 0;
     earthmesh.position.y = -0.5;
     camera.position.z = 4;
-    console.log("414px");
+    console.log("768px");
   }
+  
+ 
 
   scene.add(earthmesh);
 
@@ -147,11 +260,40 @@ function main() {
   const cloudmesh = new THREE.Mesh(cloudgeometry, cloudmaterial);
   cloudmesh.position.x = 0.6;
   scene.add(cloudmesh);
+  if(userAgent.match(userAgent.match(/firefox|fxios/i))){
+    browserName = "firefox";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  cloudmesh.position.x = 0.6;
+  cloudmesh.position.y = -0.1;
+  camera.position.z = 4;
+  console.log("1600px firefox");
+}
+  };
+  if(userAgent.match(userAgent.match(/chrome|chromium|crios/i))){
+    browserName = "chrome";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  cloudmesh.position.x = 0.6;
+  cloudmesh.position.y = -0.1;
+  camera.position.z = 3;
+  console.log("1600px chrome");
+}
+  };
+  if(userAgent.match(userAgent.match(/safari/i))){
+    browserName = "safari";
+     if (window.innerWidth == 1600) {
+  // for 1600px;
+  cloudmesh.position.x = 0.6;
+  cloudmesh.position.y = -0.1;
+  camera.position.z = 4;
+  console.log("1600px safari");
+}};
   if (window.innerWidth == 414) {
     // for 414px;
     cloudmesh.position.x = 0;
     cloudmesh.position.y = -0.5;
-    camera.position.z = 5;
+    camera.position.z = 5;  
   }
   if (window.innerWidth == 360) {
     // for 360px;
@@ -160,6 +302,13 @@ function main() {
     camera.position.z = 4;
     console.log("360px");
   }
+  if (window.innerWidth == 390) {
+    // for 390px;
+    cloudmesh.position.x = 0;
+    cloudmesh.position.y = -0.5;
+    camera.position.z = 6;
+    console.log("390px");
+   }
   if (window.innerWidth == 768) {
     // for 768px;
     cloudmesh.position.x = 0;
@@ -206,7 +355,6 @@ function main() {
 
   const starmesh = new THREE.Mesh(stargeometry, starmaterial);
   scene.add(starmesh);
-
 
   //asteroids
 // var asteroidGeometry = new THREE.IcosahedronGeometry(0.1,200 );
@@ -401,4 +549,5 @@ function main() {
   animate();
 }
 
-window.onload = main;
+window.onload = main, fnBrowserDetect();
+
